@@ -7,7 +7,7 @@ url: "https://j-i-k-o.github.io"
 baseurl: "/blog" # comment out if in root directory
 
 comments:
-    disqus: "jiko"
+    disqus: "j-i-k-o-blog"
 #    isso: "comments.mysite.org"
 
 style:
