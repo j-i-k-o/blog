@@ -1,0 +1,20 @@
+---
+title: "Categories"
+---
+<ul>
+  {% assign items = site.posts | sort: 'categories' %}
+  {% for item in items %}
+
+    {% unless item.next %}
+      <h3>{{ item.categories }}</h3>
+    {% else %}
+      {% capture category %}{{ item.categories }}{% endcapture %}
+      {% capture ncategory %}{{ item.next.categories }}{% endcapture %}
+      {% if category != ncategory %}
+        <h3>{{ item.categories }}</h3>
+      {% endif %}
+    {% endunless %}
+
+    <li>{{ item.date | date:"%b %d, %Y" }}: <a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
