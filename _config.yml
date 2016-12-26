@@ -1,6 +1,6 @@
 title: "jikoの備忘録"
 author: "jiko"
-description: "技術的なこととかをつらつらと記録したい"
+subheading: "技術的なこととかをつらつらと記録したい"
 #subheading: "Really cool blog about ... something"
 more: "read more"
 url: "https://j-i-k-o.github.io"
@@ -33,4 +33,8 @@ links:
 paginate: 10
 excerpt_separator: "\n\n\n" # excerpt ends after two blank lines
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
+#markdown: redcarpet 
+#exclude: ["vendor", "Gemfile", "Gemfile.lock"]
+#redcarpet: 
+#    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"] 
 gems: [jekyll-feed, jekyll-paginate] # include feed plugin (supported by gh-pages)
