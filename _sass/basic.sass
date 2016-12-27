@@ -10,7 +10,7 @@ body
     margin: 0
 
 h1, h2, h3, h4, h5, h6
-    font-weight: 300
+    font-weight: 600
     line-height: 1em
     a
         font-size: 1.2em
@@ -43,6 +43,7 @@ pre
     padding: 1em
     font-size: .8em
 
+
 blockquote
     border-left: 5px solid #46e
     margin: 0
@@ -63,6 +64,16 @@ article
         text-align: center
     > div
         margin-bottom: 2em
+        font-size: .8em
+        h1, h2
+            &:before
+                font-family: "FontAwesome"
+                content: "\f14a \00a0"
+        h3, h4, h5, h6
+            &:before
+                font-family: "FontAwesome"
+                content: "\f00c \00a0"
+
     footer a
         border: 1px solid
         border-radius: 3px
