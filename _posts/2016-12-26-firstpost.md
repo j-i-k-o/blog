@@ -1,7 +1,10 @@
 ---
 title:  "ブログを作ってみた。"
 date:   2016-12-26 12:14:00
-categories: jekyll
+category: ブログ
+tags:
+- jekyll
+- Github Pages
 ---
 
 ## はじめに
@@ -19,7 +22,7 @@ categories: jekyll
 
 ### 全体的なもの
 
-[Github Pages](https://pages.github.com/)を参考に、[jekyll](https://jekyllrb.com/)を用いた。最近流行っているらしい。直接レイアウトがいじれるので普通のブログに比べて自由度が格段に高くて良い。
+[GitHub Pages](https://pages.github.com/)を参考に、[jekyll](https://jekyllrb.com/)を用いた。最近流行っているらしい。直接レイアウトがいじれるので普通のブログに比べて自由度が格段に高くて良い。
 
 jekyllベースの気に入ったテーマがあれば一からデザインを作らなくてもgithubからforkして持ってくれば良い。このブログは以下のテーマを用いている。
 
@@ -39,7 +42,7 @@ $ jekyll serve
 
 <iframe class="hatenablogcard" style="width:100%;height:155px" title="RawGitとGithub wegetを使ってはてなブログでGithubリポジトリへのリンクを素敵に表示する" src="https://hatenablog-parts.com/embed?url=http://blog.monocklab.com/entry/2016/01/06/165304" width="300" height="150" frameborder="0" scrolling="no"></iframe>
 
-数式を使いたいときには[MathJax with Jekyll](http://http://gastonsanchez.com/opinion/2014/02/16/Mathjax-with-jekyll/)のページを参考にすることで、\\( \LaTeX \\) 記法を用いることができる。こんな感じに。
+数式を使いたいときには[MathJax with Jekyll](http://gastonsanchez.com/opinion/2014/02/16/Mathjax-with-jekyll/)のページを参考にすることで、\\( \LaTeX \\) 記法を用いることができる。こんな感じに。
 
 $$ a^2 + b^2 = c^2 $$
 

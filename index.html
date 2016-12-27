@@ -2,10 +2,26 @@
 layout: blank
 ---
     {% for page in paginator.posts %}
+	 {% if page.categories and {{page.categories}} != empty %}
+	 {% capture category_content %}Category:&nbsp;&nbsp;<a href="{{ '/categories/#' | prepend: site.baseurl }}{{ page.categories | array_to_sentence_string }}">{{ page.categories | array_to_sentence_string }}</a>{% endcapture %}
+	 {% endif %}
+	 
+	 {% assign post = page %}
+	 {% if post.tags.size > 0 %}
+	 	{% capture tags_content %}Tags:&nbsp;&nbsp;{% endcapture %}
+	 	{% for post_tag in post.tags %}
+	 		{% capture tags_content_temp %}{{ tags_content }}<a href="{{ '/tags/#' | prepend: site.baseurl }}{{ post_tag }}">{{ post_tag }}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endcapture %}
+	 		{% assign tags_content = tags_content_temp %}
+	 	{% endfor %}
+	 {% else %}
+	 	{% assign tags_content = '' %}
+	 {% endif %}
+
     <article>
       <header>
         <h2><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
-        <p>{% if page.author %}{{ page.author }} • {% endif %}{% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>{% endif %}{% if page.categories and {{page.categories}} != empty %} • {{ page.categories | array_to_sentence_string }}{% endif %}</p>
+		  <div class="category_tag_list">{{ category_content }}&nbsp;&nbsp;&nbsp;&nbsp;{{ tags_content }}</div>
+        <p>{% if page.author %}{{ page.author }} • {% endif %}{% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>{% endif %}</p>
       </header>
       <div>
 {{ page.excerpt }}

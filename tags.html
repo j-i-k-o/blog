@@ -1,0 +1,20 @@
+---
+title: "Tags"
+---
+<ul>
+  {% capture tagNamesString %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+  {% assign sortedTagNames = tagNamesString | split:',' | sort %}
+
+  {% for tag in sortedTagNames %}
+
+	 <h3 id="{{ tag }}">{{ tag }}</h3>
+	 {% for temp_tag in site.tags %}
+	 	{% if temp_tag[0] == tag %}
+			{% for post in temp_tag[1] %}
+      		<li>{{ post.date | date:"%b %d, %Y" }}: <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+			{% endfor %}
+		{% endif %}
+	 {% endfor %}
+
+  {% endfor %}
+</ul>
